@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,9 +7,9 @@ import ShoppingListItem from '../components/ShoppingListItem'
 import { getLists } from '../features/lists/listSlice'
 
 export default function Dashboard() {
+  console.log('全局 state:', useSelector(state => state))
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
   const { user } = useSelector(state => state.auth)
   const { lists, isLoading } = useSelector(state => state.lists)
 
